@@ -1,0 +1,9 @@
+<h1>Schedule a new Reservation</h1>
+
+<%= form_for :reservation, url: {action: "create"} do |f| %>
+	<%= f.collection_select :exam_id, Exam.all, :id, :name %> 
+  <%= f.text_field :client_first_name,  :placeholder => "Your First Name" %>
+  <%= f.text_field :client_last_name,  :placeholder => "Your Last Name" %>
+  <%= f.datetime_field :datetime, :value => DateTime.current %>
+  <%= f.submit "Create" %>
+<% end %>
