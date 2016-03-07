@@ -1,0 +1,10 @@
+
+<h1>Edit Reservation for <%= @reservation.client_first_name %> </h1>
+
+<%= form_for @reservation, url: {action: "update"} do |f| %>
+	<%= f.collection_select :exam_id, Exam.all, :id, :name %> 
+  <%= f.text_field :client_first_name,  :placeholder => "Your First Name" %>
+  <%= f.text_field :client_last_name,  :placeholder => "Your Last Name" %>
+  <%= f.datetime_field :datetime, :value => DateTime.current %>
+  <%= f.submit "Save" %>
+<% end %>
