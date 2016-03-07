@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220230015) do
+ActiveRecord::Schema.define(version: 20160307234046) do
 
   create_table "exams", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160220230015) do
     t.integer  "datetime",          limit: 4,   null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "score",             limit: 4
   end
 
 end

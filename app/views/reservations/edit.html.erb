@@ -6,5 +6,6 @@
   <%= f.text_field :client_first_name,  :placeholder => "Your First Name" %>
   <%= f.text_field :client_last_name,  :placeholder => "Your Last Name" %>
   <%= f.datetime_field :datetime, :value => DateTime.current %>
+  <%= f.text_field :score, min: 0, max: 100 %>
   <%= f.submit "Save" %>
 <% end %>
