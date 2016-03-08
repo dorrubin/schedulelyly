@@ -1,11 +1,21 @@
 
 <h1>Edit Reservation for <%= @reservation.client_first_name %> </h1>
 
+<div class= "form">
 <%= form_for @reservation, url: {action: "update"} do |f| %>
+ 	<%= label_tag(:exam_id, "Course:") %>
 	<%= f.collection_select :exam_id, Exam.all, :id, :name %> 
+  <%= label_tag(:client_first_name, "First Name:") %>
   <%= f.text_field :client_first_name,  :placeholder => "Your First Name" %>
+  <%= label_tag(:client_last_name, "Last Name:") %>
   <%= f.text_field :client_last_name,  :placeholder => "Your Last Name" %>
-  <%= f.datetime_field :datetime, :value => DateTime.current %>
-  <%= f.text_field :score, min: 0, max: 100 %>
+  <br>
+  <%= label_tag(:datetime, "Date:") %>
+  <%= f.datetime_select :datetime  %>
+  <br>
+  <%= label_tag(:score, "Score:") %>
+  <%= f.text_field :score, :placeholder => "Score" %>
+  <br>
   <%= f.submit "Save" %>
 <% end %>
+</div>

@@ -2,7 +2,7 @@
 	<h4>Customer: <%= @reservation.exam.client %></h4>
 	<h4>Exam: <%= @reservation.exam.name %></h4>
 	<div>Student: <%= @reservation.client_first_name %> <%= @reservation.client_last_name %></div>
-	<div>Exam Date: <%= Time.at @reservation.datetime %></div>
-	<div>Score: <%=@reservation.score %> </div>
+	<div class= 'timestring' >Exam Date: <%= Time.at @reservation.datetime %></div>
+	<div>Score: <%= @reservation.score %> </div>
 	<div><%= link_to 'Edit Reservation', edit_reservation_path %></div>
 </div>

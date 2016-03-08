@@ -3,8 +3,9 @@
     <h4>Customer: <%= res.exam.client %></h4>
     <h4>Exam: <%= res.exam.name %></h4>
     <div>Student: <%= res.client_first_name %> <%= res.client_last_name %></div>
-    <div>Exam Date: <%= Time.at res.datetime %></div>
+    <div class="timestring">Exam Date: <%= Time.at res.datetime %></div>
     <div> <%= link_to 'Reservation Information', reservation_path(res) %> </div>
   </div>
 
 <% end %>
+
