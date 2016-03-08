@@ -1,15 +1,17 @@
 <h1>Schedule a new Reservation</h1>
 
 <%= form_for :reservation, url: {action: "create"} do |f| %>
- 	<%= label_tag(:exam_id, "Course:") %>
-	<%= f.collection_select :exam_id, Exam.all, :id, :name %> 
-  <%= label_tag(:client_first_name, "First Name:") %>
-  <%= f.text_field :client_first_name,  :placeholder => "Your First Name" %>
-  <%= label_tag(:client_last_name, "Last Name:") %>
-  <%= f.text_field :client_last_name,  :placeholder => "Your Last Name" %>
-  <br>
-  <%= label_tag(:datetime, "Date:") %>
-  <%= f.datetime_select :datetime  %>
-  <br>
+	<div class="row">
+	 	<%= label_tag(:exam_id, "Course:") %>
+		<%= f.collection_select :exam_id, Exam.all, :id, :name %> 
+	  <%= label_tag(:client_first_name, "First Name:") %>
+	  <%= f.text_field :client_first_name,  :placeholder => "Your First Name" %>
+	  <%= label_tag(:client_last_name, "Last Name:") %>
+	  <%= f.text_field :client_last_name,  :placeholder => "Your Last Name" %>
+  </div>
+  <div class="row">
+  	<%= label_tag(:datetime, "Date:") %>
+  	<%= f.datetime_select :datetime  %>
+	</div>
   <%= f.submit "Create" %>
 <% end %>
